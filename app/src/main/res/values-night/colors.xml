@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFFFF</color>
+    <color name="colorPrimaryDark">#074EE8</color>
+    <color name="colorPrimary_2">#3EC6FF</color>
+    <color name="colorPrimary_2_light">#9ADEFA</color>
+    <color name="hint_color">#9098B1</color>
+    <color name="colorstrock">#EBF0FF</color>
+    <color name="colorstrock2">#C39C15</color>
+    <color name="text_grey">#333333</color>
+    <color name="grey_line">#d4d4d4</color>
+    <color name="colorSpecialDark">#40b3fb</color>
+    <color name="colorPink">#F84646</color>
+    <color name="colorAccent">#3B5998</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="button">#FFB401</color>
+    <color name="gray_light">#F6F6F6</color>
+    <color name="background">#111111</color>
+    <color name="text_color_titles">#FFFFFFFF</color>
+    <color name="text_color_titles_btn">#FF000000</color>
+    <color name="text_color_inButton">#111111</color>
+    <color name="card_lay_background">#FFFFFF</color>
+    <color name="drawer_start_color">#3B5998</color>
+    <color name="drawer_center_color">#3B5998</color>
+    <color name="drawer_end_color">#111111</color>
+    <color name="toolbar_back">#111111</color>
+    <color name="pink">#F84646</color>
+    <color name="text_color_gray">#F6F6F6</color>
+    <color name="btn_custom_day">#E9001838</color>
+    <color name="green">#0B6F07</color>
+
+</resources>

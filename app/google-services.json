@@ -1,0 +1,147 @@
+{
+  "project_info": {
+    "project_number": "239525944656",
+    "firebase_url": "https://notesapp-59b05-default-rtdb.firebaseio.com",
+    "project_id": "notesapp-59b05",
+    "storage_bucket": "notesapp-59b05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239525944656:android:117eee51c0ebcd4f72e055",
+        "android_client_info": {
+          "package_name": "com.timespace.notesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239525944656-5u3t3og7vj03hs437v1c78k7qibh3ccn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.timespace.notesapp",
+            "certificate_hash": "e8cfa02246336ee99d06746a7b76a287ae224d8e"
+          }
+        },
+        {
+          "client_id": "239525944656-8kc9guu38kv6dec2k84uj78584tqcsmk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.timespace.notesapp",
+            "certificate_hash": "f1fed0f0aefb5ec042672e90d28d7f9ab3868d99"
+          }
+        },
+        {
+          "client_id": "239525944656-s8aidpcvhm664te53ftvud0rcclt1a5l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.timespace.notesapp",
+            "certificate_hash": "e39f951de94896cd9d5a67b625418f7c0104e912"
+          }
+        },
+        {
+          "client_id": "239525944656-b3ob73po4fqec1vtamc6c258ejj91jpb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXZm5j7XuEzbtsWLHrR6EoH-WPv1hU34Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239525944656-b3ob73po4fqec1vtamc6c258ejj91jpb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "239525944656-u1i7o8h1j8fa4bap0e3klc8ll1jlnf2b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Com.TimeSpace.NotesApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239525944656:android:1a3b70ad10c842c772e055",
+        "android_client_info": {
+          "package_name": "common.survin_it.notesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239525944656-cb23ferdptko7v90eqtf5qrjn14ktkbl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "common.survin_it.notesapp",
+            "certificate_hash": "5ddbb463b788c6be8029518cf99bcd6d679cb02b"
+          }
+        },
+        {
+          "client_id": "239525944656-f6qe6r1pskkhr3bbot8041050rb2o3ie.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "common.survin_it.notesapp",
+            "certificate_hash": "e39f951de94896cd9d5a67b625418f7c0104e912"
+          }
+        },
+        {
+          "client_id": "239525944656-g17e14kv0lu207bk7061se6miptsvper.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "common.survin_it.notesapp",
+            "certificate_hash": "ee1b9446d20b3e773c7ea0e5f9027d47886a8bb4"
+          }
+        },
+        {
+          "client_id": "239525944656-lit7a6aqok6vf3s2vpkeaq97lli0tcnd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "common.survin_it.notesapp",
+            "certificate_hash": "dad496d51e8ea618d2b8cf98095fda650e3c4884"
+          }
+        },
+        {
+          "client_id": "239525944656-p6pi1fvscb0vjfn6at69eksdstar9m7p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "common.survin_it.notesapp",
+            "certificate_hash": "199b466e84cdb336f78a583c8ba6b755a7eb1873"
+          }
+        },
+        {
+          "client_id": "239525944656-b3ob73po4fqec1vtamc6c258ejj91jpb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXZm5j7XuEzbtsWLHrR6EoH-WPv1hU34Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239525944656-b3ob73po4fqec1vtamc6c258ejj91jpb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "239525944656-u1i7o8h1j8fa4bap0e3klc8ll1jlnf2b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Com.TimeSpace.NotesApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_state_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="102dp"
+            android:gravity="center"
+            android:text="Karnataka"
+            android:textColor="@color/text_color_titles"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Select Location"
+            android:textColor="@color/text_color_titles"
+            android:textSize="@dimen/_24sdp"
+            android:alpha="0.6"
+            app:layout_constraintTop_toBottomOf="@+id/tv_state_tag"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/BackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_arrow_back"
+                android:textColor="@color/text_color_titles"
+                android:textSize="@dimen/_30sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/districtSelectBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:singleLine="true"
+                    android:text="@string/district"
+                    android:textColor="@color/text_color_titles"
+                    android:textColorHint="@color/hint_color"
+                    android:textSize="@dimen/_18sdp" />
+
+                <View
+                    android:id="@+id/district_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="#dadada" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/districtPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_30sdp"
+                    android:layout_weight="1"
+                    android:calendarViewShown="true"
+                    android:datePickerMode="spinner"
+                    android:selectionDividerHeight="0dp"
+                    android:theme="@style/DefaultNumberPickerTheme"
+                    android:visibility="gone"
+                    app:np_dividerColor="@color/colorPink"
+                    app:np_dividerThickness="@dimen/_2sdp"
+                    app:np_dividerType="underline"
+                    app:np_textColor="@color/text_color_titles" />
+
+                <TextView
+                    android:id="@+id/townSelectBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal"
+                    android:inputType="text"
+                    android:maxLength="20"
+                    android:singleLine="true"
+                    android:text="@string/town"
+                    android:textColor="@color/text_color_titles"
+                    android:textColorHint="@color/hint_color"
+                    android:textSize="@dimen/_18sdp" />
+
+                <View
+                    android:id="@+id/town_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#dadada" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/TownPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_30sdp"
+                    android:layout_weight="1"
+                    android:calendarViewShown="true"
+                    android:datePickerMode="spinner"
+                    android:selectionDividerHeight="0dp"
+                    android:theme="@style/DefaultNumberPickerTheme"
+                    android:visibility="gone"
+                    app:np_dividerColor="@color/colorPink"
+                    app:np_dividerThickness="@dimen/_2sdp"
+                    app:np_dividerType="underline"
+                    app:np_textColor="@color/text_color_titles" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEnter"
+            style="@style/btn_main_2"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"
+            android:text="@string/enter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

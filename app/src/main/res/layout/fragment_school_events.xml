@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_all"
+                android:layout_width="78dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/black"
+                android:background="@drawable/school_button_white"
+                android:text="@string/all" />
+            <TextView
+                android:id="@+id/tv_sports"
+                android:layout_width="78dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:background="@drawable/button_selector"
+                android:text="@string/sports" />
+            <TextView
+                android:id="@+id/tv_events"
+                android:layout_width="78dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:background="@drawable/button_selector"
+                android:text="@string/events" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

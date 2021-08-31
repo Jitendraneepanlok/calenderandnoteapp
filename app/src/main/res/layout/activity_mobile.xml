@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+
+                <ImageView
+
+                    android:id="@+id/BackButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:background="@drawable/ic_arrow_back"
+                    android:padding="@dimen/_10sdp" />
+
+                <EditText
+                    android:id="@+id/enter_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal"
+                    android:hint="@string/mobile"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textColor="@color/text_color_titles"
+                    android:textColorHint="@color/hint_color"
+                    android:textSize="@dimen/_15sdp" />
+
+
+
+            </LinearLayout>
+
+
+            <Button
+                style="@style/btn_main_2"
+                android:id="@+id/next"
+                android:text="@string/next" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

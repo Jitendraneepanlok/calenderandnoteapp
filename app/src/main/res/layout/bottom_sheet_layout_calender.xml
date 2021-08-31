@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+        <View
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/card_lay_background"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/_50sdp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_cross"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_top"
+        android:layout_marginTop="-10dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:id="@+id/iv_cross"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="end"
+            android:padding="5dp"
+            android:src="@drawable/close_2" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_startweek"
+        android:layout_below="@+id/ll_cross"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ll_cross"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/startweek"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/text_color_titles"
+            android:textSize="16dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_createpdf"
+        android:layout_below="@+id/ll_startweek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ll_startweek"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calendar_category"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/text_color_titles"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_localeventsdetail"
+        android:layout_below="@id/ll_createpdf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ll_createpdf">
+
+        <TextView
+            android:id="@+id/tv_all"
+            android:layout_width="78dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/text_color_titles"
+            android:background="@color/background"
+            android:text="@string/all" />
+        <TextView
+            android:id="@+id/tv_sports"
+            android:layout_width="78dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/text_color_titles_btn"
+            android:background="@color/card_lay_background"
+            android:text="@string/sports" />
+        <TextView
+            android:id="@+id/tv_events"
+            android:layout_width="78dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/text_color_titles_btn"
+            android:background="@color/card_lay_background"
+            android:text="@string/events" />
+
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ebolo.kricheditor.MainActivity">
+    <item
+        android:id="@+id/action_html"
+        android:title="@string/action_html"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_text"
+        android:title="@string/action_text"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_set_html"
+        android:title="@string/action_set_html"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_save_content"
+        android:title="@string/action_save_content"
+        app:showAsAction="never" />
+</menu>

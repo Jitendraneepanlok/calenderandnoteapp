@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.welcomescreen.languageselector.LanguageSelectorActivity"
+        android:orientation="vertical">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/numberPickerValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_20sdp"
+                    app:np_dividerColor="@color/colorPink"
+                    app:np_dividerThickness="@dimen/_2sdp"
+                    app:np_dividerType="underline"
+                    app:np_selectedTextColor="@color/text_color_titles" />
+
+                <Button
+                    android:id="@+id/next"
+                    style="@style/btn_main_2"
+                    android:text="@string/next"
+                    />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/ll_myspae"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_44sdp"
+            android:layout_marginLeft="@dimen/_32sdp"
+            android:src="@drawable/spaces"
+            app:tint="@color/text_color_titles" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_titles"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:textSize="24sp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/my_space"/>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/gray_ll"
+        app:layout_constraintTop_toBottomOf="@id/ll_myspae"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+                <ImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_marginLeft="60dp"
+                    android:src="@drawable/calendar_event"
+                    android:layout_gravity="center_vertical"
+                    app:tint="@color/text_color_titles" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calender"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/_16sdp"
+            android:textColor="@color/text_color_titles"
+            android:layout_marginLeft="@dimen/_10sdp"
+            />
+    </LinearLayout>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

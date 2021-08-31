@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+        <View
+            style="@style/bottom_sheet_view"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_cross"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_top"
+        android:layout_marginTop="-10dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/ll_top">
+        <ImageView
+            android:id="@+id/iv_cross"
+          style="@style/close_iv"
+            android:src="@drawable/close_2" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_addspace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ll_cross"
+        >
+        <TextView
+            style="@style/add_space_tv"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_50sdp"
+        android:padding="@dimen/_20sdp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/ll_addspace">
+        <Button
+            android:id="@+id/tv_events"
+            style="@style/btn_main_2"
+            android:textSize="@dimen/_16sdp"
+            />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

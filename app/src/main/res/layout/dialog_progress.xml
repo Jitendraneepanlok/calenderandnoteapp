@@ -1,0 +1,36 @@
+<!--
+  ~ Created by Ishant Sharma
+  ~ Android Developer
+  ~ ishant.sharma1947@gmail.com
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBAr"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:indeterminateTint="@color/text_color_titles"
+        custom:layout_constraintBottom_toBottomOf="@+id/logo"
+        custom:layout_constraintEnd_toEndOf="@+id/logo"
+        custom:layout_constraintStart_toStartOf="@+id/logo"
+        custom:layout_constraintTop_toTopOf="@+id/logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,15 +27,17 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
+import com.squareup.timessquare.CalendarPickerView
+
 
 class CalenderFragment : BaseFragment() {
 
     private lateinit var binding: FragmentCalenderBinding
 
     var newValue = 0
-    var y:Int = 0
-    var m:Int = 0
-    var d:Int = 0
+    var y: Int = 0
+    var m: Int = 0
+    var d: Int = 0
     var pickerVals = arrayOf("2019", "2020", "2021", "2022", "2023")
 
     var nextYear: Calendar? = null
@@ -44,22 +46,21 @@ class CalenderFragment : BaseFragment() {
     var dt: Date? = null
     lateinit var data: Array<String>
     var years: ArrayList<String> = ArrayList()
-
     var yearList: List<Years> = ArrayList<Years>()
-
     val REQUEST_DATE_CODE = 777
-
     var imageView: ImageView? = null
 
     // firebase integrate
     var db = FirebaseFirestore.getInstance()
     var firebaseAuth = FirebaseAuth.getInstance()
+
     companion object {
         private var instance: CalenderFragment? = null
         private var viewModel: NotesViewModel? = null
+
         @JvmStatic
         fun newInstance(viewModelm: NotesViewModel): CalenderFragment? {
-            this.viewModel=viewModelm
+            this.viewModel = viewModelm
             if (instance == null) {
                 instance = CalenderFragment()
             }
@@ -67,25 +68,16 @@ class CalenderFragment : BaseFragment() {
         }
 
     }
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(
-            LayoutInflater.from(context),
-            R.layout.fragment_calender,
-            container,
-            false
-        )
-        val font = Typeface.createFromAsset(
-            requireActivity().assets,
-            "poppins_regular.ttf"
-        )
-        val fontTitle = Typeface.createFromAsset(
-            requireActivity().assets,
-            "poppins_medium.ttf"
-        )
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.fragment_calender, container, false)
+        val font = Typeface.createFromAsset(requireActivity().assets, "poppins_regular.ttf")
+        val fontTitle = Typeface.createFromAsset(requireActivity().assets, "poppins_medium.ttf")
+
         binding.calendarView.setTypeface(font)
         binding.calendarView.setTitleTypeface(fontTitle)
-        val currentYear=viewModel!!.methods.ConverMillsTo(System.currentTimeMillis(),"yyyy")
+        val currentYear = viewModel!!.methods.ConverMillsTo(System.currentTimeMillis(), "yyyy")
 
         WorkStation()
         return binding.root
@@ -98,7 +90,11 @@ class CalenderFragment : BaseFragment() {
     private fun AccessClickLIstener() {
 
         binding.ivPageChange.setOnClickListener {
-            startFragment(CalenderFragment1.newInstance(CalenderFragment1.viewModel!!), CalenderFragment1.toString(),true)
+            startFragment(
+                CalenderFragment1.newInstance(CalenderFragment1.viewModel!!),
+                CalenderFragment1.toString(),
+                true
+            )
         }
 
         val cl = Calendar.getInstance()
@@ -115,7 +111,7 @@ class CalenderFragment : BaseFragment() {
         dt = null
         try {
             dt = sdf!!.parse(currentDateandTime)
-           //myDate.setTime(dt);
+//           myDate.setTime(dt);
         } catch (e: ParseException) {
             e.printStackTrace()
         }
@@ -148,10 +144,17 @@ class CalenderFragment : BaseFragment() {
                             val formate = "dd"
                             val inputFormat = SimpleDateFormat(formate)
                             val myDate = inputFormat.format(date)
-                            startFragment(EventDetailsFragment.
-                            newInstance(viewModel!!,myDate,dayOfTheWeek,day,monthString),EventDetailsFragment.toString(),true)
+                            startFragment(
+                                EventDetailsFragment.newInstance(
+                                    viewModel!!,
+                                    myDate,
+                                    dayOfTheWeek,
+                                    day,
+                                    monthString
+                                ), EventDetailsFragment.toString(), true
+                            )
                         } else {
-                            showCustomAlert("Event Not Found",binding.root)
+                            showCustomAlert("Event Not Found", binding.root)
                         }
                     })
             }
@@ -182,8 +185,11 @@ class CalenderFragment : BaseFragment() {
                         newValue = data[newVal].toInt()
                         y = newValue - 1900
                         nextYear = Calendar.getInstance()
-                       // nextYear.add(Calendar.YEAR, 10)
+                        // nextYear.add(Calendar.YEAR, 10)
                         nextYear!!.add(Calendar.YEAR, 10)
+                        /*  val today = Date()
+         binding.calendarView.init(today, nextYear!!.time)
+             .withSelectedDate(today)*/
                         sdf = SimpleDateFormat("yyyy/MM/dd")
                         currentDateandTime = sdf!!.format(Date(y, m, d))
                         dt = null
@@ -193,7 +199,7 @@ class CalenderFragment : BaseFragment() {
                             e.printStackTrace()
                         }
                         binding.calendarView.init(dt, nextYear!!.getTime()).withSelectedDate(dt)
-                        }
+                    }
                 }
             }
         }

@@ -31,7 +31,7 @@
     <color name="drawer_end_color">#FFFFFFFF</color>
     <color name="btn_custom_day">#E0EDFF</color>
     <color name="green">#0B6F07</color>
-
+<!--    <color name="calendar_highlighted_day_bg">#0B6F07</color>-->
     <color name="theme1">#F84646</color>
     <color name="theme2">#FFFF99</color>
     <color name="theme3">#E6EDDF</color>
@@ -44,4 +44,6 @@
     <color name="gray_100">#FAFAFA</color>
     <color name="light_blue_500">#03A9F4</color>
     <color name="new_gray">#F9999999</color>
+
+
 </resources>

@@ -38,9 +38,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/cal_month"
                 android:textSize="20sp"
-                android:textColor="@color/text_color_titles"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:textColor="@color/text_color_titles"/>
 
             <TextView
                 android:id="@+id/tv_day"
@@ -48,12 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/day"
                 android:textColor="@color/new_gray"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-
-
-
+                android:textSize="14sp" />
 
         </LinearLayout>
     </LinearLayout>

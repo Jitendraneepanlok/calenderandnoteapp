@@ -10,6 +10,7 @@ import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
+import com.google.common.net.HttpHeaders.RANGE
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -78,7 +79,6 @@ class CalenderFragment : BaseFragment() {
         binding.calendarView.setTypeface(font)
         binding.calendarView.setTitleTypeface(fontTitle)
         val currentYear = viewModel!!.methods.ConverMillsTo(System.currentTimeMillis(), "yyyy")
-
         WorkStation()
         return binding.root
     }
@@ -115,7 +115,7 @@ class CalenderFragment : BaseFragment() {
         } catch (e: ParseException) {
             e.printStackTrace()
         }
-        binding.calendarView.init(dt, nextYear!!.time).inMode(CalendarPickerView.SelectionMode.RANGE).withSelectedDate(dt)
+        binding.calendarView.init(dt, nextYear!!.time).inMode(CalendarPickerView.SelectionMode.MULTIPLE).withSelectedDate(dt)
 
         binding.calendarView.setOnDateSelectedListener(object : OnDateSelectedListener {
             override fun onDateSelected(date: Date) {

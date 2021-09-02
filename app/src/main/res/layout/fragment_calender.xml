@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:weightSum="1">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".94"
             android:orientation="horizontal"
             android:weightSum="1">
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -22,46 +24,52 @@
                     android:id="@+id/calendar_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/background"
-                    app:tsquare_dayTextColor="@color/text_color_titles"
-                    app:tsquare_headerTextColor="@color/text_color_titles"
-                    app:tsquare_titleTextColor="@color/text_color_titles"
-                    app:tsquare_dividerColor="@color/background"
-                    android:backgroundTint="@color/background"
-                    app:tsquare_dayBackground="@color/background"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="@dimen/_5sdp"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_marginBottom="8dp"
+                    />
+
+<!--                android:backgroundTint="@color/background"
+                    app:tsquare_dayBackground="@color/background"
+                    app:tsquare_dayTextColor="@color/text_color_titles"
+                    app:tsquare_dividerColor="@color/background"
+                    app:tsquare_headerTextColor="@color/text_color_titles"
+                    app:tsquare_titleTextColor="@color/text_color_titles"
+                    android:background="@color/background"
+                    app:tsquare_dayBackground="@color/background-->
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight=".2">
+                android:layout_weight=".2"
+                android:gravity="center">
+
                 <com.shawnlin.numberpicker.NumberPicker
                     android:id="@+id/NumberPickerYear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/background"
                     android:calendarViewShown="false"
                     android:datePickerMode="spinner"
-                    app:np_dividerType="underline"
-                    app:np_textSize="@dimen/_10ssp"
-                    app:np_selectedTextSize="@dimen/_12ssp"
-                    app:np_textColor="@color/text_color_titles"
-                    app:np_selectedTextColor="@color/text_color_titles"
-                    android:background="@color/background"
                     app:np_dividerColor="@color/colorPink"
                     app:np_dividerThickness="@dimen/_2sdp"
-                    />
+                    app:np_dividerType="underline"
+                    app:np_selectedTextColor="@color/text_color_titles"
+                    app:np_selectedTextSize="@dimen/_12ssp"
+                    app:np_textColor="@color/text_color_titles"
+                    app:np_textSize="@dimen/_10ssp" />
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".04"
             android:gravity="center">
+
             <ImageView
                 android:id="@+id/iv_page_change"
                 android:layout_width="wrap_content"

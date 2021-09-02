@@ -70,9 +70,18 @@ class CalenderFragment : BaseFragment() {
 
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
-        binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.fragment_calender, container, false)
+        binding = DataBindingUtil.inflate(
+            LayoutInflater.from(context),
+            R.layout.fragment_calender,
+            container,
+            false
+        )
         val font = Typeface.createFromAsset(requireActivity().assets, "poppins_regular.ttf")
         val fontTitle = Typeface.createFromAsset(requireActivity().assets, "poppins_medium.ttf")
 
@@ -115,7 +124,8 @@ class CalenderFragment : BaseFragment() {
         } catch (e: ParseException) {
             e.printStackTrace()
         }
-        binding.calendarView.init(dt, nextYear!!.time).inMode(CalendarPickerView.SelectionMode.MULTIPLE).withSelectedDate(dt)
+        binding.calendarView.init(dt, nextYear!!.time)
+            .inMode(CalendarPickerView.SelectionMode.SINGLE).withSelectedDate(dt)
 
         binding.calendarView.setOnDateSelectedListener(object : OnDateSelectedListener {
             override fun onDateSelected(date: Date) {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- When selected -->
+    <item
+        android:state_pressed="true"
+        android:drawable="@drawable/line_backgroung"/>
+
+    <item android:state_activated="true"
+        android:drawable="@drawable/line_backgroung"/>
+
+    <!-- When not selected -->
+    <item android:drawable="@drawable/without_line_background"/>
+</selector>

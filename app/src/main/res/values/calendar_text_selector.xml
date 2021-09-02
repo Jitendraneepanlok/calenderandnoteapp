@@ -4,12 +4,12 @@
     <color name="calendar_bg">#FFF</color>
     <color name="calendar_divider">#FFF</color>
     <color name="calendar_inactive_month_bg">#FFF</color>
-    <color name="calendar_selected_day_bg">#F84646</color>
+    <color name="calendar_selected_day_bg">#FFF</color>
     <color name="calendar_highlighted_day_bg">#FFF</color>
-    <color name="calendar_selected_range_bg">#FF000000</color>
+    <color name="calendar_selected_range_bg">#FFF</color>
     <color name="calendar_text_inactive">#FF000000</color>
     <color name="calendar_text_active">#FF000000</color>
-    <color name="calendar_text_selected">#FF000000</color>
+    <color name="calendar_text_selected">#F84646</color>
     <color name="calendar_text_unselectable">#FF000000</color>
 
 </resources>

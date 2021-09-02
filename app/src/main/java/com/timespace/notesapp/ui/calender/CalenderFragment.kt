@@ -115,7 +115,7 @@ class CalenderFragment : BaseFragment() {
         } catch (e: ParseException) {
             e.printStackTrace()
         }
-        binding.calendarView.init(dt, nextYear!!.time).withSelectedDate(dt)
+        binding.calendarView.init(dt, nextYear!!.time).inMode(CalendarPickerView.SelectionMode.RANGE).withSelectedDate(dt)
 
         binding.calendarView.setOnDateSelectedListener(object : OnDateSelectedListener {
             override fun onDateSelected(date: Date) {

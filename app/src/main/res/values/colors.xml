@@ -43,4 +43,5 @@
     <color name="editor_toolbar_bg_color">#E5E5E5</color>
     <color name="gray_100">#FAFAFA</color>
     <color name="light_blue_500">#03A9F4</color>
+    <color name="new_gray">#F9999999</color>
 </resources>

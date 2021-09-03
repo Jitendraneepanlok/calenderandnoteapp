@@ -5,9 +5,10 @@
       <map>
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/bg_circle_selected.xml" value="0.2703125" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/bg_circle_today.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/calender_bg_selector.xml" value="0.264" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/date_selectable_drawable.xml" value="0.2703125" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/line.xml" value="0.2703125" />
-        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/line_backgroung.xml" value="0.16799999999999998" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/line_backgroung.xml" value="0.176" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/txt_line.xml" value="0.2703125" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/without_line_background.xml" value="0.2703125" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/calender_event_list.xml" value="0.176" />

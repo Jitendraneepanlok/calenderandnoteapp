@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:drawable="@drawable/without_line_background"
+        android:state_selected="true" />
+    <item android:drawable="@drawable/without_line_background"
+        android:state_pressed="true" />
+
+    <item app:tsquare_state_current_month="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/green" />
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/line_backgroung"
+        app:tsquare_state_today="true" />
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorPink" />
+        </shape>
+    </item>
+</selector>-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:state_selected="true"
+        android:drawable="@drawable/without_line_background"/>
+
+    <item android:state_pressed="true"
+        android:drawable="@drawable/without_line_background"/>
+
+    <item app:tsquare_state_current_month="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/transparent"/>
+        </shape>
+    </item>
+
+
+    <item app:tsquare_state_today="true"
+        android:drawable="@drawable/line_backgroung">
+
+        <color android:color="@color/black"/>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/transparent"/>
+        </shape>
+    </item>
+</selector>

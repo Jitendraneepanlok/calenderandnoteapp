@@ -11,5 +11,4 @@
     <color name="calendar_text_active">#FF000000</color>
     <color name="calendar_text_selected">#F84646</color>
     <color name="calendar_text_unselectable">#FF000000</color>
-
 </resources>

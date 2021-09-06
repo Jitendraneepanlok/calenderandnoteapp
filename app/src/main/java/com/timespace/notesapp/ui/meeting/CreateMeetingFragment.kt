@@ -1,5 +1,6 @@
  package com.timespace.notesapp.ui.meeting
 
+import android.app.ProgressDialog
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -32,6 +33,10 @@ import com.timespace.notesapp.ui.meeting.adapter.Tags_adapter
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
+import com.google.firebase.firestore.DocumentReference
+
+
+
 
 class CreateMeetingFragment : BaseFragment()  {
 
@@ -68,14 +73,8 @@ class CreateMeetingFragment : BaseFragment()  {
 
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(
-            LayoutInflater.from(context),
-            R.layout.fragment_create_meeting,
-            container,
-            false
-        )
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.fragment_create_meeting, container, false)
 
         WorkStation()
         return binding.root
@@ -103,10 +102,7 @@ class CreateMeetingFragment : BaseFragment()  {
     private fun AccessClickLIstener() {
 
         binding.ivCross.setOnClickListener {
-            startFragment(
-                HomeFragment.newInstance(viewModel!!),
-                HomeFragment.toString(),true)
-        }
+            startFragment(HomeFragment.newInstance(viewModel!!), HomeFragment.toString(),true) }
 
         binding.switchButton.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked){
@@ -116,7 +112,6 @@ class CreateMeetingFragment : BaseFragment()  {
                 binding.frame3.visibility = View.VISIBLE
             }
         }
-
 
         initLunarPicker()
         initCustomTimePicker()
@@ -131,8 +126,6 @@ class CreateMeetingFragment : BaseFragment()  {
         binding.tvEndDate.setOnClickListener(View.OnClickListener { dtpvCustomEndDate!!.show() })
 
         binding.frame4.setOnClickListener(View.OnClickListener { dtpvOptions!!.show() })
-
-
 
         binding.tvStartTime.setOnClickListener(View.OnClickListener { dtpvCustomTime!!.show() })
 
@@ -165,12 +158,28 @@ class CreateMeetingFragment : BaseFragment()  {
         })
 
         binding.ivDone.setOnClickListener(View.OnClickListener {
+            val progressDialog = ProgressDialog(activity)
+            progressDialog.setMessage("please wait...")
+            progressDialog.setCancelable(false);
+            progressDialog.show()
+
+            /* // I have added data for testing.
+            val db = FirebaseFirestore.getInstance()
+             val db1 = db.collection("Jitendra Test").document("Jitendra Meetings")
+             val user: MutableMap<String, Any> = HashMap()
+             user.put("Meeting","Dummy")
+             user.put("Date","Today")
+             user.put("Tag","@Test")
+             db1.set(user) */
+
+
             val title: String
             val startDate: String
             val endDate: String
             val start_time: String
             val end_time: String
             val detail: String
+
             title = binding.tvTitle.getText().toString()
             startDate = binding.tvStartDate.getText().toString()
             start_time = binding.tvStartTime.getText().toString()
@@ -208,7 +217,8 @@ class CreateMeetingFragment : BaseFragment()  {
                     mySpace.setDetails(binding.tvDetail.getText().toString())
                     mySpace.setAlerts(alertList)
                     mySpace.setTags(tagsList)
-                    db.collection("users")
+
+                db.collection("users")
                         .document(firebaseAuth.currentUser!!.uid)
                         .collection("new_meeting")
                         .document()
@@ -216,24 +226,23 @@ class CreateMeetingFragment : BaseFragment()  {
                         .addOnSuccessListener(OnSuccessListener<Void?> {
                             //binding.tvTitle.text = ""
                             showCustomAlert("success",binding.root)
+                            progressDialog.dismiss()
                         })
                         .addOnFailureListener(OnFailureListener { e ->
                             showCustomAlert(e.message.toString(),binding.root)
+                            progressDialog.dismiss()
                         })
                 }
             }
         })
-
     }
 
     private fun addTagData(levelList: ArrayList<AlertModel>) {
-
         //  this.alertList.clear();
         if (levelList != null) {
             tagsList.addAll(levelList)
         }
         tags_adapter?.notifyDataSetChanged()
-
     }
 
     private fun initOptionPicker() {

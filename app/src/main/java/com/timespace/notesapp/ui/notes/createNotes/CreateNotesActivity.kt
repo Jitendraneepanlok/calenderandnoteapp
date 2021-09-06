@@ -24,7 +24,6 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class CreateNotesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateNotesBinding
     var bindingDialog: BottomSheetDialogStringBinding? = null
@@ -34,12 +33,11 @@ class CreateNotesActivity : AppCompatActivity() {
     var curDate: String? = null
     var date: Date? = null
     var firebaseAuth: FirebaseAuth? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_create_notes)
-        bindingDialog = DataBindingUtil.inflate(
-            LayoutInflater.from(this), R.layout.bottom_sheet_dialog_string, null, false
-        )
+        bindingDialog = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.bottom_sheet_dialog_string, null, false)
 
         handler = Handler()
 
@@ -54,7 +52,6 @@ class CreateNotesActivity : AppCompatActivity() {
         }
         bindingDialog!!.plainText.setOnClickListener { binding.editor.setHeading(3) }
 
-
         bindingDialog!!.bulletList.setOnClickListener {
             binding.editor.setUnorderedList()
             bottomSheetDialog!!.dismiss()
@@ -67,11 +64,7 @@ class CreateNotesActivity : AppCompatActivity() {
             binding.editor.checkBox()
             bottomSheetDialog!!.dismiss()
         }
-
-
         //  findViewById<View>(R.id.action_color).setOnClickListener { binding. editor.updateTextColor("#FF3333") }
-
-
         // findViewById<View>(R.id.action_unordered_numbered).setOnClickListener{ binding.  editor.insertList(true) }
 
         bindingDialog!!.devider.setOnClickListener {
@@ -87,18 +80,16 @@ class CreateNotesActivity : AppCompatActivity() {
         }
 
         //  findViewById<View>(R.id.action_erase).setOnClickListener { binding. editor.clearAllContents() }
-
         /*  findViewById<View>(R.id.action_blockquote).setOnClickListener { binding. editor.updateTextStyle(EditorTextStyle.BLOCKQUOTE) }*/
-
-
 
         binding.functionality.setOnClickListener {
             BottomeSheet()!!.show()
         }
+
         /* binding.save.setOnClickListner{
              val  data =binding.editor.getContentAsHTML()
 
-         }*/
+         }
 
 //        binding.editor.setOnTextChangeListener {
 //            if ( binding.editor != null &&  binding.editor.size > 0) {
@@ -134,9 +125,7 @@ class CreateNotesActivity : AppCompatActivity() {
 //
 //                }
 //            }
-//        })
-
-
+//        }) */
 
     }
 
@@ -159,6 +148,7 @@ class CreateNotesActivity : AppCompatActivity() {
 
         val database = FirebaseDatabase.getInstance()
         val ref = database.getReference("Notes/MySpace/TO-DO-LIST/$userId/TASK-$filename")
+
         ref.setValue(note).addOnCompleteListener {
             Toast.makeText(this,"succes",Toast.LENGTH_SHORT).show()
         }
@@ -170,7 +160,6 @@ class CreateNotesActivity : AppCompatActivity() {
             .setMessage("Are you sure you want to exit the editor?")
             .setPositiveButton("Yes",
                 DialogInterface.OnClickListener { dialog, which ->
-
                     if (binding.title.text.equals("")) {
                         finish()
                     } else {
@@ -179,7 +168,6 @@ class CreateNotesActivity : AppCompatActivity() {
                         finish()
                     }
                 })
-
             .setNegativeButton("No", null)
             .show()
     }
@@ -189,8 +177,6 @@ class CreateNotesActivity : AppCompatActivity() {
             bottomSheetDialog = BottomSheetDialog(this)
             bottomSheetDialog!!.setContentView(bindingDialog!!.root)
         }
-
         return bottomSheetDialog
-
     }
 }

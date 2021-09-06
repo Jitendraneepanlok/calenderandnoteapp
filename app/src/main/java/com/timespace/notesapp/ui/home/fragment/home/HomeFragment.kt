@@ -1,6 +1,7 @@
 package com.timespace.notesapp.ui.home.fragment.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +20,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class HomeFragment : BaseFragment(),EventAdapter.AdaptorAction {
+class HomeFragment : BaseFragment(), EventAdapter.AdaptorAction {
     private lateinit var binding: FragmentHomeBinding
     private var eventList: ArrayList<DailyEvents> = ArrayList()
 
@@ -39,10 +40,10 @@ class HomeFragment : BaseFragment(),EventAdapter.AdaptorAction {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = DataBindingUtil.inflate(
             LayoutInflater.from(requireContext()),
             R.layout.fragment_home,
@@ -77,23 +78,27 @@ class HomeFragment : BaseFragment(),EventAdapter.AdaptorAction {
             binding.wishMe.setText(getString(R.string.good_night))
         }
         binding.name.setText(viewModel!!.sharedPre.name)
+
+
+
         lifecycleScope.launchWhenCreated {
-            val data = firestore.collection("event").whereEqualTo(
-                "start_date",
-                viewModel!!.methods.ConverMillsTo(System.currentTimeMillis(), "dd-MM-yyyy")
-            ).get().await()
-            eventList=ArrayList()
+
+            val data = firestore.collection("event").whereEqualTo("Start Date"/*"start_date"*/,
+            viewModel!!.methods.ConverMillsTo(System.currentTimeMillis(), "dd-MM-yyyy")).get().await()
+
+            eventList = ArrayList()
+
             if (data != null) {
-                for ( item in  data.documents) {
-                  val events=  firestore.collection("event").document(item.id).get().await().toObject(Events::class.java)
-                       if(events!=null){
-                           val dailyEvents =  DailyEvents(events.start_time,events.subject_title)
-                           eventList.add(dailyEvents);
-                           val eventAdapter = EventAdapter (requireContext(), eventList,this@HomeFragment);
-                           binding.eventRecycler.adapter=eventAdapter
-                       }else{
-                           showCustomAlert("No Events Found",binding.root)
-                       }
+                for (item in data.documents) {
+                    val events = firestore.collection("event").document(item.id).get().await().toObject(Events::class.java)
+                    if (events != null) {
+                        val dailyEvents = DailyEvents(events.start_time, events.subject_title)
+                        eventList.add(dailyEvents);
+                        val eventAdapter = EventAdapter(requireContext(), eventList, this@HomeFragment);
+                        binding.eventRecycler.adapter = eventAdapter
+                    } else {
+                        showCustomAlert("No Events Found", binding.root)
+                    }
                 }
             }
         }
@@ -101,7 +106,7 @@ class HomeFragment : BaseFragment(),EventAdapter.AdaptorAction {
 
     }
 
-    override fun OnClickListener(value:  List<TextView>?) {
+    override fun OnClickListener(value: List<TextView>?) {
         setViewTextColor(value?.get(0)!!)
     }
 }

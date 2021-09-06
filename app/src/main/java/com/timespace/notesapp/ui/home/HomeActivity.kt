@@ -23,6 +23,7 @@ import com.timespace.notesapp.ui.space.SpacesActivity
 class HomeActivity : BaseActivity() {
     private lateinit var binding:ActivityHomeBinding
     private val viewModel: NotesViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=DataBindingUtil.setContentView(this, R.layout.activity_home)

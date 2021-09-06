@@ -22,15 +22,10 @@ import com.timespace.notesapp.ui.meeting.CreateMeetingFragment
 import kotlin.collections.ArrayList
 
 class EventDetailsFragment: BaseFragment() {
-
     private lateinit var binding: FragmentEventDetailBinding
-
     var rv_description: RecyclerView? = null
-
     private var firebaseFirestore = FirebaseFirestore.getInstance()
     private var firebaseAuth: FirebaseAuth=FirebaseAuth.getInstance()
-
-
     var selectedDate = ""
     var eventDocId:String? = ""
 //    var day:String? = ""
@@ -40,14 +35,8 @@ class EventDetailsFragment: BaseFragment() {
     private var eventItemAdapter: EventItemAdapter? = null
     var descriptionList: ArrayList<Description> = ArrayList<Description>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(
-            LayoutInflater.from(context),
-            R.layout.fragment_event_detail,
-            container,
-            false
-        )
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.fragment_event_detail, container, false)
 
         WorkStation()
         return binding.root

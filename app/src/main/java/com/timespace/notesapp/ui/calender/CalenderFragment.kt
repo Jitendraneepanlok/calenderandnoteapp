@@ -3,6 +3,7 @@ package com.timespace.notesapp.ui.calender
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.format.DateFormat
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.common.net.HttpHeaders.RANGE
+import com.google.errorprone.annotations.Var
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -75,13 +77,13 @@ class CalenderFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = DataBindingUtil.inflate(
             LayoutInflater.from(context),
             R.layout.fragment_calender,
             container,
             false
         )
+
         val font = Typeface.createFromAsset(requireActivity().assets, "poppins_regular.ttf")
         val fontTitle = Typeface.createFromAsset(requireActivity().assets, "poppins_medium.ttf")
 
@@ -134,18 +136,21 @@ class CalenderFragment : BaseFragment() {
                 val myDate = inputFormat.format(date)
 
                 // get required dates
-                val dayOfTheWeek = DateFormat.format("EEEE", date) as String // Thursday
-                val day = DateFormat.format("dd", date) as String // 20
-                val monthString = DateFormat.format("MMMM", date) as String // Jun
+                val dayOfTheWeek = DateFormat.format("EEEE", date) as String
+                val day = DateFormat.format("dd", date) as String
+                val monthString = DateFormat.format("MMMM", date) as String
 
                 // check in firebase whether event exist or not on selected date
-                db.collection("event").whereEqualTo("start_date", myDate)
+                db.collection("event").whereEqualTo("Start Date"/*"start_date"*/, myDate)
                     .get()
                     .addOnCompleteListener(OnCompleteListener<QuerySnapshot> { task ->
                         val documentExists: Boolean
                         if (task.isSuccessful) {
                             documentExists = !task.result.isEmpty
+
                             for (document in task.result) {
+                                var name: String = document.getData().get("Alert").toString()
+                                Log.e("data", "" + name)
                             }
                         } else {
                             documentExists = false
@@ -154,6 +159,7 @@ class CalenderFragment : BaseFragment() {
                             val formate = "dd"
                             val inputFormat = SimpleDateFormat(formate)
                             val myDate = inputFormat.format(date)
+
                             startFragment(
                                 EventDetailsFragment.newInstance(
                                     viewModel!!,
@@ -195,11 +201,8 @@ class CalenderFragment : BaseFragment() {
                         newValue = data[newVal].toInt()
                         y = newValue - 1900
                         nextYear = Calendar.getInstance()
-                        // nextYear.add(Calendar.YEAR, 10)
                         nextYear!!.add(Calendar.YEAR, 10)
-                        /*  val today = Date()
-         binding.calendarView.init(today, nextYear!!.time)
-             .withSelectedDate(today)*/
+
                         sdf = SimpleDateFormat("yyyy/MM/dd")
                         currentDateandTime = sdf!!.format(Date(y, m, d))
                         dt = null

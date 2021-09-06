@@ -11,10 +11,19 @@
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/line_backgroung.xml" value="0.176" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/txt_line.xml" value="0.2703125" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/drawable/without_line_background.xml" value="0.2703125" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/activity_create_notes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/activity_notes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/activity_spaces.xml" value="0.2" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/bottom_sheet_dialog_string.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/calender_event_list.xml" value="0.176" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/event_item_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/fragment_calender.xml" value="0.264" />
         <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/fragment_calender1.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/fragment_create_meeting.xml" value="0.264" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/fragment_event_detail.xml" value="0.2" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Neepanlok Projects/Calender And Note/timespace_android_app-main/app/src/main/res/layout/item_event.xml" value="0.264" />
       </map>
     </option>
   </component>

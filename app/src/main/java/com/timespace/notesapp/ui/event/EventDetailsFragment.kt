@@ -56,9 +56,8 @@ class EventDetailsFragment: BaseFragment() {
         binding.tvMonth.setText(month)
         binding.tvDate.setText(date)
 
-
         // get data from firebase
-        firebaseFirestore!!.collection("event").whereEqualTo("start_date", date)
+        firebaseFirestore!!.collection("event").whereEqualTo("Start Date"/*"start_date"*/, date)
             .get()
             .addOnCompleteListener(OnCompleteListener<QuerySnapshot> { task ->
                 val documentExists: Boolean
@@ -67,11 +66,12 @@ class EventDetailsFragment: BaseFragment() {
                     for (document in task.result) {
                         eventDocId = document.id
                         //new introduce
-                        firebaseFirestore!!.collection("event").document(eventDocId!!)
+                        firebaseFirestore!!.collection("event")
+                            .document(eventDocId!!)
                             .get()
                             .addOnCompleteListener(OnCompleteListener<DocumentSnapshot> { task ->
                                 val events: Events? = task.result.toObject(Events::class.java)
-                                //   String one = events.getDescriptionEvent().getDescription4();
+                                // String one = events.getDescriptionEvent().getDescription4();
                                 binding.tvDailyPanchanga.text = events!!.subject_title
                                 binding.tvTithiTag.text = events.descriptions!!.description1
                                 binding.tvTithi.text = events.descriptions!!.description2
@@ -87,7 +87,6 @@ class EventDetailsFragment: BaseFragment() {
                     }
                 }
             })
-
     }
 
     companion object {

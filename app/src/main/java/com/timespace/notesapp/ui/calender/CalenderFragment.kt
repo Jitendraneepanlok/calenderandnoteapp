@@ -191,6 +191,7 @@ class CalenderFragment : BaseFragment() {
                         years.add(yearList[i].title)
                     }
                     data = arrayOf(arrayOf(years.size).toString())
+
                     data = years.toArray<String>(data)
                     binding.NumberPickerYear.setWrapSelectorWheel(true)
                     binding.NumberPickerYear.setMinValue(0)
